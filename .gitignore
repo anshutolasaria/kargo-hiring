@@ -1,0 +1,16 @@
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+.vercel
+.DS_Store
+
+# secrets — never commit
+.env
+.env.local
+.env*.local
+
+# candidate data — personal information, never commit
+applications/
+hires/

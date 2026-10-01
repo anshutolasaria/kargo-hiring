@@ -1,0 +1,33 @@
+* { box-sizing: border-box; }
+body { margin: 0; font: 14px/1.45 system-ui, -apple-system, Segoe UI, sans-serif; color: #111; background: #f6f6f4; }
+main { max-width: 1000px; margin: 0 auto; padding: 16px; }
+.nav { display: flex; gap: 16px; align-items: center; padding: 10px 16px; background: #fff; border-bottom: 1px solid #ddd; }
+.nav a { color: #333; }
+h1 { font-size: 20px; margin: 8px 0 12px; }
+button { font: inherit; padding: 6px 12px; border: 1px solid #888; border-radius: 4px; background: #fff; cursor: pointer; }
+button.primary { background: #1f3b73; color: #fff; border-color: #1f3b73; }
+button:disabled { opacity: .5; cursor: not-allowed; }
+select, input, textarea { font: inherit; padding: 4px 6px; border: 1px solid #aaa; border-radius: 4px; }
+textarea { width: 100%; min-height: 180px; }
+input.subject { width: 100%; margin-bottom: 6px; }
+.drop { border: 2px dashed #888; border-radius: 6px; padding: 32px; text-align: center; background: #fff; margin-bottom: 12px; }
+.drop.over { background: #eef3ff; border-color: #1f3b73; }
+table { width: 100%; border-collapse: collapse; background: #fff; }
+td, th { border-bottom: 1px solid #e3e3e3; padding: 5px 8px; text-align: left; vertical-align: top; }
+.tabs { display: flex; gap: 4px; margin-bottom: 12px; }
+.tabs button.active { background: #1f3b73; color: #fff; }
+.card { background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+.card h3 { margin: 0 0 6px; font-size: 16px; }
+.row { display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+.muted { color: #666; }
+.badge { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 12px; background: #eee; }
+.badge.sent { background: #d7f2dc; color: #0f5a1e; }
+.badge.drafted { background: #e2e9fb; color: #1f3b73; }
+.badge.needs_review { background: #fde2e1; color: #8a1c13; }
+.cutoff { border-top: 3px dashed #c0392b; margin: 18px 0; text-align: center; color: #c0392b; font-weight: 600; }
+.cutoff span { background: #f6f6f4; padding: 0 10px; position: relative; top: -11px; }
+.error { color: #b00020; }
+.ok { color: #0f5a1e; }
+.brief { background: #fffbe6; border-left: 3px solid #e0b400; padding: 6px 10px; margin: 8px 0; }
+details summary { cursor: pointer; margin: 6px 0; }
+@media (max-width: 600px) { .drop { padding: 20px; } }

@@ -1,0 +1,69 @@
+KARGO HIRING RUBRIC — Product Manager (PM) and Senior Product Manager (SPM)
+
+Source: patterns from the 8 past-hire profiles, comparing the five rated Exceeds Expectations
+(Rohan Desai, Sunita Krishnamurthy, Aditya Shetty, Meghna Tiwari, Lavanya Iyer) against the
+three rated Meets / Below (Vikram Nair, Rahul Bose, Preetham Rao). The job descriptions were
+used only to understand the roles, not as a source of criteria.
+
+PATTERNS FOUND
+1. Time on the operations floor. Every Exceeds hire did hands-on operational work before (or
+   alongside) their current role: Rohan ran 180+ shipments a month at a CHA firm at JNPT, Sunita
+   handled 200+ shipments of documentation, Aditya worked berth escalations at a port terminal,
+   Meghna resolved a customs hold overnight, Lavanya ran carrier allocation at a 3PL. Vikram (HR
+   tech), Rahul (fintech marketing) and Preetham (e-commerce backend) never worked inside an
+   operation.
+2. Built the fix nobody asked for. Exceeds hires saw a broken workflow and built a fix that
+   colleagues then adopted: Rohan's Excel shipment tracker (12-person team in two weeks) and
+   weekend BoL prototype (30 users in a month); Sunita's weekend workflow redesign kept
+   permanently; Meghna's onboarding checklist that became the team standard; Lavanya's visibility
+   dashboard adopted by 2 other teams. The lower-rated hires built inside a structure that
+   already existed (Vikram's PRD template within a 4-person PM team) or optimised a funnel.
+3. Owns the bad day, and writes down what went wrong. Exceeds hires own failures and pressure
+   with no one above them and document the lesson: Lavanya killed 2 features on usage data and
+   wrote the outage post-mortem; Aditya ran and shared a post-mortem on a lost freight-forwarder
+   deal; Meghna fixed a customs hold through the night; Rohan migrated a vendor under time
+   pressure with no data loss. The lower-rated CVs list only wins, certifications and talks.
+
+ROLE: PM
+
+Criterion name: Operations Floor Experience
+What a strong candidate looks like: Has personally done operational work in logistics, freight, supply chain or a similarly operations-heavy business — handling shipments, documentation, carriers, customs, warehouse or field exceptions day to day — not just building software for, selling to, or interviewing such users. Score 5: one year or more doing the operational work themselves, with specifics (volumes, document types, counterparties). Score 3: close, repeated exposure (e.g. onsite with ops teams during rollouts) but never did the job. Score 1: no operational exposure; all experience is desk-side product, marketing or engineering in unrelated domains.
+Weight: 25%
+
+Criterion name: Built the Fix Nobody Asked For
+What a strong candidate looks like: Noticed a broken or missing workflow on their own initiative and built something — a tracker, tool, prototype, process or dashboard — that other people then adopted without being told to. Score 5: at least one clear example with evidence of adoption by others (number of users or teams, became the standard). Score 3: built improvements, but inside an assigned project or with no evidence anyone else adopted them. Score 1: only delivered assigned roadmap items; no self-started builds.
+Weight: 25%
+
+Criterion name: Kills, Post-mortems and Lessons
+What a strong candidate looks like: The CV names something that did not work and what they did about it — a feature they killed on data, a lost deal or outage they ran the post-mortem on, a bet that failed and the lesson that changed how the team works. Score 5: a specific failure, the decision they made, and the lasting change it produced. Score 3: mentions iterating or learning in general terms without a concrete failure. Score 1: a list of wins, certifications and talks only.
+Weight: 20%
+
+Criterion name: Owns It With No Layer Above
+What a strong candidate looks like: Has owned an area or a crisis end to end with no manager, senior PM or account manager between them and the outcome — made the call, handled the consequence. For PM, this can be ownership of a feature area or a high-pressure incident. Score 5: sole owner of an area or incident with a concrete outcome. Score 3: owned pieces under a senior person who made the final calls. Score 1: supporting role only.
+Weight: 15%
+
+Criterion name: Turns Field Reality Into What Gets Built
+What a strong candidate looks like: Has translated what operational users actually do into what an engineering team builds — wrote the spec or workflow mapping from time spent with field users, and can show the change it produced (fewer tickets, faster onboarding, workflow fixed). Score 5: specific example of a field finding that changed what was built, with a measured result. Score 3: ran discovery or user interviews but the link to a built change or result is vague. Score 1: no evidence of working from field users to the build.
+Weight: 15%
+
+ROLE: SPM
+
+Criterion name: Operations Floor Experience
+What a strong candidate looks like: Has personally done operational work in logistics, freight, supply chain or a similarly operations-heavy business and still uses that knowledge in senior product decisions — especially around carriers, ports, customs, ERP/TMS systems and data flowing between them. Score 5: one year or more doing the operational work themselves, plus later product decisions clearly shaped by it. Score 3: close, repeated exposure to operations without doing the work. Score 1: no operational exposure.
+Weight: 20%
+
+Criterion name: Built the Fix Nobody Asked For
+What a strong candidate looks like: Repeatedly started things nobody assigned — tools, integrations, processes, standards — that became how a team or company works. At SPM level the bar is that the self-started work spread beyond their own team (adopted by other teams, customers or the company). Score 5: multiple examples, at least one adopted beyond their own team. Score 3: one self-started build adopted only locally. Score 1: delivered assigned work only.
+Weight: 20%
+
+Criterion name: Kills, Post-mortems and Lessons
+What a strong candidate looks like: Has made a senior call that went wrong, or stopped something already in motion, and shows what they did next — killed a product or integration on data, owned an outage or failed launch publicly, changed a practice as a result. Score 5: a specific, consequential failure with their decision and the lasting change. Score 3: generic mention of iteration or learning. Score 1: wins only.
+Weight: 15%
+
+Criterion name: Owns It With No Layer Above
+What a strong candidate looks like: Has been the most senior product decision-maker for a product area or platform — no senior PM, Head of Product or committee above making the calls — in an early-stage or unstructured company, and lived with the consequences of hard calls (build vs configure vs not touch, integration bets, reliability trade-offs). Score 5: sole senior owner for 2+ years with named, consequential calls and outcomes. Score 3: owned an area but a more senior product leader made the big calls. Score 1: execution role under others.
+Weight: 30%
+
+Criterion name: Turns Field Reality Into What Gets Built
+What a strong candidate looks like: Has taken what operations users, sales and customers actually experience and turned it into platform or integration decisions — and shows the result (a deal unblocked, a segment opened, a reliability problem fixed). Score 5: a specific field finding that changed a platform or integration decision, with a business result. Score 3: discovery activity with a vague link to outcomes. Score 1: no evidence.
+Weight: 15%
