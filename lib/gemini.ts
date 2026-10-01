@@ -7,10 +7,10 @@ import type { Criterion, Role } from "./rubric";
 // models (quality matters most); drafting uses Flash-Lite models to save scoring quota.
 const list = (v: string | undefined, d: string[]) => (v ? v.split(",").map((s) => s.trim()).filter(Boolean) : d);
 const SCORE_MODELS = list(process.env.GEMINI_SCORE_MODELS, [
-  "gemini-3.8-flash", "gemini-3.7-flash", "gemini-3.6-flash", "gemini-3.5-flash", "gemini-3-flash-preview", "gemini-2.5-flash",
+  "gemini-3.8-flash", "gemini-3.7-flash", "gemini-3.6-flash", "gemini-3.5-flash", "gemini-3-flash-preview",
 ]);
 const DRAFT_MODELS = list(process.env.GEMINI_DRAFT_MODELS, [
-  "gemini-3.5-flash-lite", "gemini-3.1-flash-lite", "gemini-2.5-flash-lite", "gemini-2.5-flash",
+  "gemini-3.5-flash-lite", "gemini-3.1-flash-lite", "gemini-3-flash-preview",
 ]);
 
 // Models that recently returned 429/503 are skipped for a while (per server instance).
@@ -49,15 +49,28 @@ async function callJson<T>(prompt: string, schema: Schema, models: string[]): Pr
       const res = await ai.models.generateContent({
         model,
         contents: prompt,
-        config: { temperature: 0, responseMimeType: "application/json", responseSchema: schema },
+        config: {
+          temperature: 0,
+          responseMimeType: "application/json",
+          responseSchema: schema,
+          abortSignal: AbortSignal.timeout(25000), // an overloaded model can hang; move on instead
+        },
       });
       const text = res.text;
       if (!text) throw new Error("Empty response from Gemini");
       return { data: JSON.parse(text) as T, model };
     } catch (e: unknown) {
+      const name = (e as Error).name;
+      if (name === "AbortError" || name === "TimeoutError") {
+        coolingUntil.set(model, Date.now() + 60e3);
+        console.warn(`[gemini] ${model} -> timeout, skipping for 60s`);
+        continue;
+      }
       const status = (e as { status?: number }).status;
       if (status === 429 || status === 503 || status === 404) {
-        coolingUntil.set(model, Date.now() + cooldownMs(status, String((e as Error).message)));
+        const ms = cooldownMs(status, String((e as Error).message));
+        coolingUntil.set(model, Date.now() + ms);
+        console.warn(`[gemini] ${model} -> ${status}, skipping for ${Math.round(ms / 1000)}s`);
         continue;
       }
       throw e;

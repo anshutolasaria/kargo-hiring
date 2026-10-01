@@ -26,7 +26,7 @@ async function main() {
   const files = readdirSync(DIR).filter((f) => /\.(pdf|docx)$/i.test(f) && !SKIP.has(f));
   for (const [i, f] of files.entries()) {
     let backoff = 30000;
-    for (let attempt = 0; attempt < 6; attempt++) {
+    for (let attempt = 0; attempt < 10; attempt++) {
       const fd = new FormData();
       fd.append("file", new Blob([readFileSync(join(DIR, f))]), f);
       fd.append("role", roleFor(f));
@@ -35,7 +35,7 @@ async function main() {
       if (res.status === 429) {
         console.log(`[${i + 1}/${files.length}] ${f}: rate limited, waiting ${backoff / 1000}s`);
         await sleep(backoff);
-        backoff *= 2;
+        backoff = Math.min(backoff * 2, 90000);
         continue;
       }
       console.log(`[${i + 1}/${files.length}] ${f} (${roleFor(f)}): ${j.status ?? "ERROR"} ${j.pm_score ?? ""} ${j.spm_score ?? ""} ${j.message ?? j.error ?? ""}`);
