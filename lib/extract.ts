@@ -18,16 +18,18 @@ const REDACTED = "[REDACTED]";
 
 export async function fileToText(fileName: string, buf: Buffer): Promise<string> {
   const lower = fileName.toLowerCase();
+  let text: string;
   if (lower.endsWith(".pdf")) {
     const pdf = await getDocumentProxy(new Uint8Array(buf));
-    const { text } = await extractText(pdf, { mergePages: true });
-    return Array.isArray(text) ? text.join("\n") : text;
+    const out = await extractText(pdf, { mergePages: true });
+    text = Array.isArray(out.text) ? out.text.join("\n") : out.text;
+  } else if (lower.endsWith(".docx")) {
+    text = (await mammoth.extractRawText({ buffer: buf })).value;
+  } else {
+    throw new Error(`Unsupported file type: ${fileName} (PDF or DOCX only)`);
   }
-  if (lower.endsWith(".docx")) {
-    const { value } = await mammoth.extractRawText({ buffer: buf });
-    return value;
-  }
-  throw new Error(`Unsupported file type: ${fileName} (PDF or DOCX only)`);
+  // Postgres rejects NUL characters; some PDFs contain them (and other stray control chars).
+  return text.replace(/\u0000/g, "").replace(/[\u0001-\u0008\u000B\u000C\u000E-\u001F]/g, " ");
 }
 
 export function sha256(buf: Buffer): string {
